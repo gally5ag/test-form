@@ -1,0 +1,147 @@
+/* ========= ベース ========= */
+:root {
+    --bg: #f5efe9;
+    /* ページ背景の淡いベージュ */
+    --panel: #ffffff;
+    /* テーブル背景 */
+    --text: #4a3f39;
+    /* 文字色 */
+    --muted: #a89283;
+    /* 補助テキスト */
+    --line: #e7ddd6;
+    /* 罫線 */
+    --head: #c5ad9b;
+    /* 左ヘッダーカラムの色 */
+    --accent: #7b6355;
+    /* ボタン色 */
+    --accent-d: #5c4a3f;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ========= コンテンツ枠 ========= */
+.confirm__content {
+    max-width: 860px;
+    margin: 80px auto 120px;
+    padding: 0 20px;
+}
+
+.confirm__heading {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.confirm__heading h2 {
+    font-size: 28px;
+    letter-spacing: .08em;
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* ========= テーブル ========= */
+.confirm-table {
+    background: var(--panel);
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .05);
+    overflow: hidden;
+}
+
+.confirm-table__inner {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+/* 1行 */
+.confirm-table__row {
+    border-bottom: 1px solid var(--line);
+}
+
+.confirm-table__row:last-child {
+    border-bottom: none;
+}
+
+/* 左ヘッダー列 */
+.confirm-table__header {
+    width: 28%;
+    background: var(--head);
+    color: #fff;
+    padding: 16px 18px;
+    font-weight: 600;
+    text-align: left;
+    vertical-align: middle;
+    letter-spacing: .03em;
+}
+
+/* 右テキスト列 */
+.confirm-table__text {
+    padding: 16px 18px;
+    background: #fff;
+    vertical-align: middle;
+}
+
+/* 入力を「テキスト表示」風に */
+.confirm-table__text input[readonly],
+.confirm-table__text input[disabled] {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+    font-size: 15px;
+    padding: 0;
+}
+
+/* ========= ボタン ========= */
+.form__button {
+    margin-top: 28px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+
+.form__button-submit {
+    appearance: none;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 26px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform .06s ease, background-color .2s ease, box-shadow .2s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .08);
+}
+
+.form__button-submit:hover {
+    background: var(--accent-d);
+}
+
+.form__button-submit:active {
+    transform: translateY(1px);
+}
+
+/* ========= レスポンシブ ========= */
+@media (max-width: 640px) {
+    .confirm__content {
+        margin: 48px auto 80px;
+    }
+
+    .confirm__heading h2 {
+        font-size: 22px;
+    }
+
+    /* モバイルは行間を広めに */
+    .confirm-table__header,
+    .confirm-table__text {
+        padding: 14px 14px;
+    }
+
+    /* 文字サイズを少し落とす */
+    .confirm-table__text input[readonly] {
+        font-size: 14px;
+    }
+}

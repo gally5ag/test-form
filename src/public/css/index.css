@@ -1,0 +1,244 @@
+/* ===== Contact Form – simple & clean ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box
+}
+
+:root {
+    --text: #4a3f39;
+    --muted: #b49f92;
+    --line: #e8ddd6;
+    --field: #f3f0ec;
+    --btn: #7b6355;
+    --btn-d: #5c4a3f;
+    --danger: #d14c4c;
+    --h: 42px;
+    /* field height */
+}
+
+body {
+    margin: 0;
+    background: #fff;
+    color: var(--text)
+}
+
+/* container & heading */
+.contact-form__content {
+    max-width: 860px;
+    margin: 80px auto 120px;
+    padding: 0 20px
+}
+
+.contact-form__heading {
+    margin-bottom: 28px;
+    text-align: center
+}
+
+.contact-form__heading h2 {
+    font: 600 28px/1.2 Georgia, "Times New Roman", serif;
+    color: var(--btn)
+}
+
+/* row: label (left) + control (right) */
+.form__group {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line)
+}
+
+.form__group:first-of-type {
+    border-top: 1px solid var(--line)
+}
+
+.form__group-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 10px
+}
+
+.form__label--item {
+    font-weight: 600;
+    letter-spacing: .03em
+}
+
+.form__label--required {
+    color: #e67a7a;
+    font-weight: 700
+}
+
+/* 2-column on desktop */
+@media (min-width:900px) {
+    .form__group {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        column-gap: 28px;
+        align-items: center
+    }
+
+    .form__group-title {
+        margin: 0
+    }
+
+    .form__group-content {
+        max-width: 520px;
+        justify-self: start
+    }
+}
+
+/* controls (shared) */
+.form__group-content .form__input--text,
+.form__group-content .form__input--select {
+    display: flex;
+    gap: .75rem;
+    align-items: center
+}
+
+.form__group-content input[type="text"],
+.form__group-content input[type="email"],
+.form__group-content input[type="tel"],
+.form__group-content select {
+    width: 100%;
+    height: var(--h);
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--field);
+    color: var(--text);
+    box-shadow: none;
+    transition: border-color .15s, box-shadow .15s;
+}
+
+.form__group-content textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--field);
+    color: var(--text);
+    resize: vertical;
+    transition: border-color .15s, box-shadow .15s;
+}
+
+.form__group-content input::placeholder,
+.form__group-content textarea::placeholder {
+    color: var(--muted)
+}
+
+.form__group-content input:focus,
+.form__group-content select:focus,
+.form__group-content textarea:focus {
+    outline: none;
+    border-color: #cbb7a9;
+    box-shadow: 0 0 0 3px rgba(203, 183, 169, .25)
+}
+
+/* name: equal widths */
+.form__input--text input[name="last_name"],
+.form__input--text input[name="first_name"] {
+    flex: 1 1 0;
+    min-width: 0
+}
+
+/* phone: equal widths + centered digits */
+.form__input--text input[name="tel1"],
+.form__input--text input[name="tel2"],
+.form__input--text input[name="tel3"] {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none !important;
+    text-align: center
+}
+
+.form__input--text span {
+    flex: 0 0 auto;
+    color: var(--muted)
+}
+
+/* select caret (centered) */
+.form__input--select select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 36px;
+    background-image:
+        linear-gradient(45deg, var(--muted) 50%, transparent 50%),
+        linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) 50%, calc(100% - 14px) 50%;
+}
+
+/* radios inline */
+.form__input--radio {
+    display: flex;
+    gap: 22px;
+    align-items: center
+}
+
+.form__input--radio label {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center
+}
+
+.form__input--radio input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--btn)
+}
+
+/* errors */
+.form__error {
+    margin-top: 6px;
+    color: var(--danger);
+    font-size: 13px
+}
+
+/* submit button */
+.form__button {
+    text-align: center;
+    margin-top: 26px
+}
+
+.form__button-submit {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+    background: var(--btn);
+    color: #fff;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 14px;
+    letter-spacing: .05em;
+    transition: transform .06s, background-color .2s, box-shadow .2s;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .08)
+}
+
+.form__button-submit:hover {
+    background: var(--btn-d)
+}
+
+.form__button-submit:active {
+    transform: translateY(1px)
+}
+
+/* mobile */
+@media (max-width:640px) {
+    .contact-form__content {
+        margin: 48px auto 80px
+    }
+
+    .contact-form__heading h2 {
+        font-size: 22px
+    }
+
+    .form__group-title {
+        margin-bottom: 10px
+    }
+
+    .form__input--text {
+        gap: .5rem
+    }
+}

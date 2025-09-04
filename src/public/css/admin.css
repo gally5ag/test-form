@@ -1,0 +1,307 @@
+:root {
+    --text: #4a3f39;
+    --muted: #9a8578;
+    --line: #e8ddd6;
+    --bg: #fff;
+    --chip: #7b6355;
+    --chip-2: #f5eee8;
+    --btn: #7b6355;
+    --btn-d: #5c4a3f;
+    --danger: #d14c4c;
+}
+
+/* ========== 上部ヘッダー帯（中央タイトル＋右端にlogout） ========== */
+.hero {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+    padding: 16px 60px;
+    /* 右に余白を多め：ボタン分 */
+    text-align: center;
+    /* タイトルは中央に固定 */
+    margin: 0 0 12px;
+    /* 上の余白なし / 下だけ少し */
+}
+
+.hero__brand {
+    margin: 0;
+    font: 600 26px/1.2 Georgia, "Times New Roman", serif;
+    letter-spacing: .06em;
+    color: var(--btn);
+}
+
+.hero__login {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    /* 右端に固定 */
+    transform: translateY(-50%);
+    display: inline-block;
+    font-size: 12px;
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--muted);
+    text-decoration: none;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.hero__login:hover {
+    background: #f5eee8;
+}
+
+/* ========== 右上ページネーション ========== */
+.pager--top {
+    display: flex;
+    justify-content: flex-end;
+    margin: 8px 0 12px;
+}
+
+.pager--top nav {
+    margin: 0;
+}
+
+.pager--top .pagination {
+    display: flex;
+    gap: 6px;
+    margin: 0;
+}
+
+.pager--top .page-link {
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--text);
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+.pager--top .page-item.active .page-link {
+    background: var(--chip);
+    color: #fff;
+    border-color: transparent;
+}
+
+/* Bootstrapの “Showing x to y” を消したい場合だけ */
+.pager--top .small.text-muted {
+    display: none;
+}
+
+/* （見た目を整える小調整：管理画面の上余白を減らす） */
+.admin {
+    margin: 40px auto 120px;
+}
+.admin {
+    max-width: 1060px;
+    margin: 80px auto 120px;
+    padding: 0 20px;
+    color: var(--text)
+}
+
+.admin__heading {
+    text-align: center;
+    margin-bottom: 22px
+}
+
+.admin__heading h2 {
+    font: 600 28px/1.2 Georgia, "Times New Roman", serif;
+    color: var(--btn)
+}
+
+.admin__search {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 16px
+}
+
+.admin__search .i {
+    height: 38px;
+    padding: 0 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text)
+}
+
+.admin__search .chk {
+    font-size: 12px;
+    color: var(--muted);
+    margin-right: 8px
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1px solid var(--line);
+    color: var(--text);
+    background: #fff
+}
+
+.btn--primary {
+    background: var(--btn);
+    color: #fff;
+    border-color: transparent
+}
+
+.btn--ghost {
+    background: #f5eee8;
+    color: var(--muted)
+}
+
+.btn--danger {
+    background: var(--danger);
+    color: #fff;
+    border-color: transparent
+}
+
+.btn--sm {
+    padding: 6px 10px;
+    font-size: 12px
+}
+
+.table-wrap {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden
+}
+
+.tbl {
+    width: 100%;
+    border-collapse: collapse
+}
+
+.tbl th,
+.tbl td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle
+}
+
+.tbl thead th {
+    background: var(--chip);
+    color: #fff;
+    font-weight: 600
+}
+
+.tbl tbody tr:nth-child(even) {
+    background: #fcf9f6
+}
+
+.tag {
+    display: inline-block;
+    background: var(--chip-2);
+    color: var(--muted);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px
+}
+
+.muted {
+    color: var(--muted);
+    text-align: center
+}
+
+.pager nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 14px
+}
+
+.pager nav>div {
+    display: inline-block
+}
+
+.pager nav ul {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.pager nav a,
+.pager nav span {
+    display: inline-block;
+    min-width: 28px;
+    text-align: center;
+    padding: 6px 10px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--text);
+    font-size: 13px
+}
+
+.pager nav .active span {
+    background: var(--chip);
+    color: #fff;
+    border-color: transparent
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none
+}
+
+.modal.is-open {
+    display: block
+}
+
+.modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .3)
+}
+
+.modal__panel {
+    position: relative;
+    z-index: 1;
+    width: min(680px, 92vw);
+    margin: 6vh auto 0;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .2);
+    padding: 20px 22px;
+    border: 1px solid var(--line)
+}
+
+.modal__close {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    border: none;
+    background: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer
+}
+
+.modal__title {
+    font-weight: 600;
+    margin: 0 0 8px
+}
+
+.def {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    row-gap: 10px;
+    column-gap: 18px
+}
+
+.def dt {
+    color: var(--muted)
+}
+
+.modal__actions {
+    margin-top: 16px;
+    text-align: right
+}
